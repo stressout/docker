@@ -1,0 +1,179 @@
+1. Создайте виртуальную машину с помощью Docker-machine, используя virtual box и назовите вирт.машину - Char
+2. Получите IP виртуальной машины Char
+3. ***********************HUYNA((**********************************
+4. Достаньте контейнер “Hello world” из Docker Hub, который доступен.
+5. Запустите контейнер “Hello world” и убедитесь что оно рисует приветственное сообщение, а затем убирается
+6. Запустите nginx контейнер, доступный на Docker Hub, как фоновую задачу. Задача должна быть названа - overlord, можно перегрузиться самостоятельно и подключить 80 портов к 5000 порту виртуальной машины Char. Проверь, норм ли работает контейнер посетив  http://<ip-de-char>
+7. Получите внешний IP контейнера overlord без запуска его оболочки и одной командой.
+8. Запустите shell из alpine контейнера, и убедитесь, что вы можете взаимодействовать напрямую с контейнерами с помощью терминала, и что контейнеры удаляют себя после того, как Shell закончил исполнение.
+9. Из shell контейнера debian, установите с помощью пакетного менеджера контейнерами все что нужно для компиляции исходного кода на C и запуште это на гит репозиторий(перед этим update && upgrade). Для этого упражнения вы должны указывать только те команды, которые должны выполняться напрямую в контейнере.
+10. Создайте том(volume) с названием hatchery
+11. Список всех созданных на машине докер томов(Docker volumes).
+12. Запустите mysql контейнер как фоновая задача. Она должна быть способна самостоятельно перезапуститься в случае ошибки, и root пароль БД должен быть “Kerrigan”. Также убедитесь, что БД хранится в hatchery томе(volumes), что контейнер напрямую создает БД с именем zerglings, а сам контейнер под именем spawning-pool
+13. Напечатайте переменные окружения контейнера командой, убедитесь, что вы правильно настроили контейнер.
+14. Запустите контейнер wordpress как фоновую задачу, тупа по фону. Контейнер должен быть назван - air, его порт 80 должен быть привязан к порту 8080 виртуальной машины, и он должен быть способен использовать контейнер spawning-pool как БД службу. Вы можете попробовать получить доступ к lair на вашей машине через веб брусе с IP адресов виртуальной машины в качестве URL.
+Кратко говоря - развертка функционала сайта на вордпресе в 2 команды.
+15. Запустите контейнер phpmyadmin как фоновую задачу. Имя должно быть - roach-warden& его 80 порт должен быть привязан к 8081 порту виртуальной машины и он должен быть способен исследовать БД, которая храниться в контейнере spawning-pool
+16. Ищите логи контейнера spawning-pool в режиме реального времени не запуская оболочку.
+17. Выведите все текущие активные контейнеры виртуальной машины Char
+18. Перезапустите контейнер overlord.
+19. Запустите контейнер по имени Abathur. **********************
+20. Создайте локальный (swarm?), виртуальная машина Char должна управлять им. **************************
+21. Создайте другую виртуальную машину с помощью Docker-machine используя virtual box драйвер, и назовите её - Aiur.
+22. ********************************************
+23. Создайте внутреннюю сеть типа overlay и назовите её overmind.
+24. Запустите сервис rabbitmq, который будет назван orbitдal-command. Вы должны определить конкретного пользователя и пароль для службы RabbitMQ, они могут быть любыми, какими захотите. Этот сервис будет в сети overmind.
+25. Список всех сервисов в локальной (swarm)************************************
+26. Запустите сервис 42school/engineering-bay в двух копиях и убедитесь, что сервис работает правильно(см. Документацию на hub.docker.com). Этот сервиснымс будет назван engineering-bay и будет в сети overmind.
+27. Получите логи в режиме реального времени, содержащие инфо об одной из задач сервиса engineering-bay *****************
+28. Еб*ный рот, группа зергов рашит orbital-command и выключение engineering-bay сервиса не поможет. Вы должны отправить пехоту чтобы порешать мокрых ублюдков. Запустите 42school/marine-squade в двух копиях и убедитесь, что сервис работает правильно(см. Документацию на hub.docker.com). Этот сервис будет назван marines и будет в сети overmind.
+29. Отобразите все задачи marines сервиса.
+30. Увеличьте число копий сервиса marines на 20, потому что их всегда мало, что порешать мраморных зергов. (Не забудьте посмотреть на задачи и логи сервиса, будет весело).
+31. Принудительно выйдите и удалите все сервисы на локальной (swarm) одной командой.
+32. Принудительно выйдите и удалите все контейнера(независимо от их статуса) одной командой.
+33. Удалите все container images хранящие на виртуальной машине Char одной командой.
+34. Удалите виртуальную машину Aiur без использования rm -rf.
+
+
+
+01
+https://docs.docker.com/machine/reference/create/
+
+02
+https://docs.docker.com/machine/reference/ip/
+
+03
+https://docs.docker.com/machine/reference/env/
+
+04
+https://docs.docker.com/engine/reference/commandline/pull/
+
+05 06
+https://docs.docker.com/engine/reference/commandline/run/
+
+07
+https://docs.docker.com/engine/reference/commandline/inspect/
+
+08
+https://docs.docker.com/engine/reference/commandline/run/
+
+10 11
+https://docs.docker.com/engine/reference/commandline/volume/
+
+12
+https://docs.docker.com/engine/reference/commandline/run/
+https://docs.docker.com/samples/library/mysql/
+
+13
+https://docs.docker.com/engine/reference/commandline/exec/
+
+14
+https://docs.docker.com/engine/reference/commandline/run/
+
+15
+https://hub.docker.com/r/phpmyadmin/phpmyadmin/
+
+16
+https://docs.docker.com/engine/reference/commandline/logs/
+
+17
+https://docs.docker.com/engine/reference/commandline/ps/
+
+18
+https://docs.docker.com/engine/reference/commandline/restart/
+
+19
+https://docs.docker.com/engine/reference/commandline/run/
+https://docs.docker.com/engine/reference/commandline/exec/
+http://flask.pocoo.org/
+
+20
+https://docs.docker.com/engine/reference/commandline/swarm/
+https://docs.docker.com/engine/reference/commandline/swarm_init/ \
+
+21
+https://docs.docker.com/machine/reference/create/
+
+22
+https://docs.docker.com/engine/reference/commandline/swarm_join-token/
+
+23
+https://docs.docker.com/engine/reference/commandline/network_create/
+
+24
+https://docs.docker.com/engine/reference/commandline/service_create/
+https://docs.docker.com/samples/library/rabbitmq/
+
+25
+https://docs.docker.com/engine/reference/commandline/service_ls/
+
+26
+https://docs.docker.com/engine/reference/commandline/service_create/
+
+27
+https://docs.docker.com/engine/reference/commandline/service_logs/
+https://docs.docker.com/engine/reference/commandline/service_create/
+
+27
+https://docs.docker.com/engine/reference/commandline/service_logs/
+
+28
+https://docs.docker.com/engine/reference/commandline/service_create/
+
+29
+https://docs.docker.com/engine/reference/commandline/service_ps/
+
+30
+https://docs.docker.com/engine/reference/commandline/service_scale/
+
+31
+https://docs.docker.com/engine/reference/commandline/swarm_leave/
+
+32
+https://docs.docker.com/engine/reference/commandline/rm/
+https://docs.docker.com/engine/reference/commandline/ps/
+
+33
+https://docs.docker.com/engine/reference/commandline/rmi/
+https://docs.docker.com/engine/reference/commandline/images/
+
+34
+https://docs.docker.com/engine/reference/commandline/rm/
+
+
+
+
+12.
+	12.1 Запустить mysql контейнер в фоне(docker run -d)
+	12.2 Перезагрузка в случае ошибки (--restart on-failure:10)
+	12.3 Пароль от БД - Kerrigan (-e MYSQL_ROOT_PASSWORD=Kerrigan)
+	12.4 БД храниться в томе hatchery(-v hatchery: /var/lib/mysql)
+	12.5 Имя контейнера - spawning-pool (--name spawning-pool) 
+	12.6 Контейнер создает БД с именем zerglings (-e MYSQL_DATABASE=zerglings)
+
+
+24.
+	24.1 Запустить сервис rabbitmq с именем orbital-command (docker service create — name orbital-command)
+	24.2 Определить конкретного пользователя и пароль для этого сервиса(имя и пароль любые)
+	24.3 Этот сервис должен находиться в сети overmind (
+	
+
+
+26.
+	26.1 Запустить сервис 42school/engineering-bay в 2-ух копиях
+	26.2 Сервис должен называться engineering-bay
+	26.3 Сервис должен быть в сети overmind
+
+
+28.
+	28.1 Запустить сервис 42school/marine-squad в 2 копиях
+	28.2 Назвать сервис marines
+	28.3 будет в сети overmind
+	28.4 
+
+
+19.	19.1 
+	19.1 
+	19.1 
+	19.1 
+	19.1 

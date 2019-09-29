@@ -1,0 +1,10 @@
+brew update
+
+Устанавливаем все необходимое: 
+	1. brew install docker
+	2. brew install docker-machine
+
+Чекаем версию докера
+	1. docker version
+	2. docker-machine version
+
