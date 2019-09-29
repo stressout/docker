@@ -1,1 +1,1 @@
-docker inspect overlord | grep IPAddress | tail - 1 | awk '{print $2}'
+docker inspect overlord | grep IPAddress | tail -1 | awk '{print $2}'
